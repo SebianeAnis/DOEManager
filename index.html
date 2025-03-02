@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOE Manager</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    button { margin: 10px 0; padding: 10px; width: 100%; }
+    input { width: 100%; padding: 8px; margin-bottom: 10px; }
+    .form-group { margin-bottom: 15px; }
+    #logContainer { height: 200px; overflow-y: auto; border: 1px solid #ccc; padding: 5px; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <h2>DOE Manager</h2>
+
+  <!-- Formulaire Optionnel -->
+  <div>
+    <h3>Informations DOE (Facultatif)</h3>
+    <div class="form-group">
+      <label for="projectName">Nom du projet :</label>
+      <input type="text" id="projectName" placeholder="Ex: DALKIA SAINT OUEN">
+    </div>
+    <div class="form-group">
+      <label for="doeVersion">Version DOE :</label>
+      <input type="text" id="doeVersion" placeholder="Ex: 1">
+    </div>
+    <div class="form-group">
+      <label for="doeDate">Date de génération :</label>
+      <input type="date" id="doeDate">
+    </div>
+  </div>
+
+  <!-- Zone de sélection du dossier source -->
+  <input type="text" id="sourcePath" placeholder="Chemin du dossier source" readonly />
+  <button id="selectFolder">Sélectionner un dossier source</button>
+
+  <!-- Zone de sélection du dossier de destination -->
+  <input type="text" id="destPath" placeholder="Chemin du dossier de destination" readonly />
+  <button id="selectDestFolder">Sélectionner un dossier de destination</button>
+
+  <!-- Suivi des copies -->
+  <div id="logContainer">
+    <pre id="logMessages"></pre>
+  </div>
+
+  <!-- Bouton de génération -->
+  <button id="generateDOE">Générer le dossier DOE</button>
+  <p id="status"></p>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
