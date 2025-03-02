@@ -1,141 +1,0 @@
-PLAN A FAIRE RESTANT :    - push  ✅
-
--gestion des logs, suivi des copies avec une div scrollable (comme dans l’installation d’un logiciel) dans la page, on séparera et differenciera dans quelle fonction on est, ( fonction x : copie de … vers …. avec succes \n)…
- - Fichiers restants bilel modele
- - génération des fichiers docx, word avec le formulaire des infos à remplir + template
-
-
-
-Historique :  
-Commençons avec une première fonction de documents à copier :   Allons dans n’importe quel dossier machine : 
-
-on recupere : 
-
-		--> Documents
-			--> Operating Instructions  ================= ON COPIE TOUT
-
-		--> Device Data
-			--> Systeme Doku ================= ON COPIE TOUT
-
-On colle dans :  
-Dossier dest :
-
-		--> 2 - Fiches techniques et manuels
-			--> MANUELS
-				--> tout coller 
-
-Deuxième fonction de copie :
-
-Allons dans n’importe quel dossier machine : 
-
-on recupere : 
-
-		--> Documents
-			--> Technical Instructions  ================= ON COPIE TOUT
-
-On colle dans :  
-Dossier dest :
-
-		--> 2 - Fiches techniques et manuels
-			--> FICHE TECHNIQUE
-				--> tout coller
-
-
-Troisième fonction (création) : 
-Faisons une petite fonction simple : 
-
-On créé dans :  
-Dossier dest :
-		--> 2 - Fiches techniques et manuels
-			--> créer un dossier nommé "RAPPORT D'INTERVENTION" qu'on remplira plus tard de pdfs manuellement
-
-
-Quatrième fonction (boucle sur les machines) :  
-
-boucle machines présentes : 
-
-Pour chaque dossier machine , on va créer un dossier par machine où le nom du dossier sera le nom de la machine, ex : MCS100FT_SN242_ 1248 Master 1 => MCS100FT_L1 ou MCS100FT_SN1836 0885_Redu => MCS100FT_Red  … ( ex : MCS100FT_L1, MCS100FT_L2, MCS100FT_L3, MCS100FT_Red)
-
-ce qui fait :  
-Dans : 
-	Dossier dest :
-			--> Fiches techniques et manuels
-				-->  (MCS100FT_Red)
-				-->  (MCS100FT_L2)
-				-->  (MCS100FT_L3)
-				(varie en foncion de nombre de machines dans le dossier source)
-
-D’abord, dans chaque dossier machine ( ex : MCS100FT_L1, MCS100FT_L2, MCS100FT_L3, MCS100FT_Red) 
-
-
-On va récupérer des fichiers « précis » dans :  
-
-Dossier source :
-		Machine correspondante  ( ce cas : MCS100FT_SN242_ 1248 Master 1)
-			---> Device Data
-				----> System Data
-					  --> Récupérer ces fichiers précis : contenant le mot  « PrevMaint » ou « Fiche de donnèes » ou « Signalist-Fieldbus » ou « Systemdescription » ou « protocole de gaz » 
-Qu’on ajoutera dans :
-
-Dossier dest :
-	--> 2 - Fiches techniques et manuels
-			—> NOM_L1 (MCS100FT_L1) dossier machine
-				-- coller tout les fichiers précis
-
-///
-
-Ensuite, créé un sous dossier "Rapport tests cube analyseur »  dans le dossier machine, dans lequel on y mettra des données :  
-On va récuperer IBN Data de : 
-
-Dossier source :
-		Machine correspondante (ce cas : MCS100FT_SN242_ 1248 Master 1)
-			---> Device Data
-				----> System Data
-					----> IBN-Data
-						---> on copie tout le contenu 
-
-Dossier dest :
-	--> 2 - Fiches techniques et manuels
-			—> NOM_L1 (MCS100FT_L1)
-			   —> Rapport tests cube analyseur
-				-- coller tout le contenu de IBN-Data 
-				
-
-Fin de la boucle machine.
-
-
-5e fonction :
-
-- Pour chaque machine on ira récupérer son plan,  il se situe dans : 
-
-Dossier source :
-		—> MachineX 
-			---> Device Data
-				----> Installations Drawings
-					——> PDF
-						—> un fichier pdf qui commence par « K9… » (on le copie et renomme « Plan Analyseur N_MachineOuRedu »)
-
-Ensuite colle dans  : 
-
-
-Dossier dest :
-	--> 1 - Documents études
-		—> coller le fichier pdf « K9.. » renommé en « Plan Analyseur N_(numéro ou Redu) »
-				
-
-6e fonction :
-
-
-- Dans n’importe quelle machine on ira récupérer le fichier situé dans : 
-
-Dossier source :
-		—> Machine
-			---> Device Data
-				----> le fichier contenant « Sonde Chauffè » dans le nom
-
-Ensuite coller dans  : 
-
-
-Dossier dest :
-	--> 1 - Documents études
-		—> coller le fichier contenant « Sonde Chauffè » dans le nom
